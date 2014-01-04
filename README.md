@@ -25,6 +25,8 @@ edit('var a = 42;', 'app.js', function(err, result) {
 })
 ```
 
+Note that `app.js` will still be a tmp file
+
 ## License
 
 MIT
