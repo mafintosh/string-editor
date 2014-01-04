@@ -9,7 +9,7 @@ Edit a string using $EDITOR from within your node app.
 ``` js
 var edit = require('string-editor');
 
-// this launches your $EDITOR with "hello world"
+// this launches your $EDITOR with a tmp file containing "hello world"
 edit('hello world', function(err, result) {
 	// when you are done editing result will contain the string
 	console.log(result);
