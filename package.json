@@ -5,5 +5,13 @@
   "repository": "git://github.com:mafintosh/string-editor.git",
   "dependencies": {
     "editor": "0.0.6"
-  }
+  },
+  "keywords": [
+  	"string",
+  	"editor",
+  	"edit",
+  	"env",
+  	"cli",
+  	"app"
+  ]
 }
