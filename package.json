@@ -1,6 +1,6 @@
 {
   "name": "string-editor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Edit a string using $EDITOR from within your node app.",
   "repository": "git://github.com:mafintosh/string-editor.git",
   "dependencies": {
