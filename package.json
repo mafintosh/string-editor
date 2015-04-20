@@ -4,14 +4,14 @@
   "description": "Edit a string using $EDITOR from within your node app.",
   "repository": "git://github.com:mafintosh/string-editor.git",
   "dependencies": {
-    "editor": "0.0.6"
+    "editor": "git://github.com/substack/node-editor.git#da8710f02a6bf70d56ab42688df3bd55232c5a44"
   },
   "keywords": [
-  	"string",
-  	"editor",
-  	"edit",
-  	"env",
-  	"cli",
-  	"app"
+    "string",
+    "editor",
+    "edit",
+    "env",
+    "cli",
+    "app"
   ]
 }
