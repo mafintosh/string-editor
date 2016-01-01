@@ -3,18 +3,19 @@ var os = require('os');
 var fs = require('fs');
 var path = require('path');
 
-var edit = function(str, filename, cb) {
-	if (typeof filename === 'function') return edit(str, null, filename);
-	if (!filename) filename = Date.now()+'';
+var edit = function(str, opts, cb) {
+	if (typeof opts === 'function') return edit(str, null, opts);
+	opts = opts || {};
+	if (!opts.filename) opts.filename = Date.now()+'';
 
-	filename = path.join(os.tmpDir(), filename);
-	fs.writeFile(filename, str, function(err) {
+	opts.filename = path.join(os.tmpDir(), opts.filename);
+	fs.writeFile(opts.filename, str, function(err) {
 		if (err) return cb(err);
-		editor(filename, function(code) {
+		editor(opts.filename, { editor: opts.editor }, function(code) {
 			if (code) return cb(new Error('non-zero exit code ('+code+')'));
-			fs.readFile(filename, 'utf-8', function(err, result) {
+			fs.readFile(opts.filename, 'utf-8', function(err, result) {
 				if (err) return cb(err);
-				fs.unlink(filename, function() {
+				fs.unlink(opts.filename, function() {
 					cb(null, result);
 				});
 			});
