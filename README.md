@@ -16,11 +16,13 @@ edit('hello world', function(err, result) {
 });
 ```
 
-Sometimes it can be useful to set an filename to help your editor to enable highlighting etc.
+Sometimes it can be useful to set an filename to help your editor to enable highlighting etc, or set another editor of choice.
 
 ``` js
 // we pass app.js as a filename to help with highlighting
-edit('var a = 42;', 'app.js', function(err, result) {
+// and $GIT_EDITOR as editor
+var opts = { filename: 'app.js', editor: process.env.GIT_EDITOR };
+edit('var a = 42;', opts, function(err, result) {
 	console.log(result);
 })
 ```
