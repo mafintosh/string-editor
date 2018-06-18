@@ -7,7 +7,7 @@ var edit = function(str, filename, cb) {
 	if (typeof filename === 'function') return edit(str, null, filename);
 	if (!filename) filename = Date.now()+'';
 
-	filename = path.join(os.tmpDir(), filename);
+	filename = path.join(os.tmpdir(), filename);
 	fs.writeFile(filename, str, function(err) {
 		if (err) return cb(err);
 		editor(filename, function(code) {
